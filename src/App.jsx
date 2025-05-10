@@ -1,6 +1,16 @@
 import React from "react";
+import { useGSAP } from "@gsap/react";
 
 function App() {
+  useGSAP((gsap) => {
+    const tl = gsap.timeline();
+
+    tl.to(".vi-mask-group", {
+      rotate: 10,
+      ease: "Power4.easeInOut",
+      transformOrigin: "50% 50%",
+    });
+  });
   return (
     <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-[#000]">
       <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
