@@ -61,8 +61,29 @@ function App() {
         </svg>
       </div>
       {showContent && (
-        <div className="main w-full h-full bg-black">
-          <h3>GTA VI</h3>
+        <div className="main w-full">
+          <div className="landing w-full h-screen bg-black">
+            <div className="navbar absolute top-0 left-0 z-[10] w-full py-10 px-10 ">
+              <div className="logo">
+                <div className="lines"></div>
+                <h3 className="text-3xl text-white">Rockstar</h3>
+              </div>
+            </div>
+            <div className="imagesdiv relative w-full h-screen overflow-hidden">
+              <img
+                className="absolute top-0 left-0 w-full h-full object-cover "
+                src="./sky.png"
+              />
+              <img
+                className="absolute top-0 left-0 w-full h-full object-cover "
+                src="./bg.png"
+              />
+              <img
+                className="absolute -bottom-[60%] left-1/2 -translate-x-1/2 scale-[0.5] "
+                src="./girlbg.png"
+              />
+            </div>
+          </div>
         </div>
       )}
     </>
