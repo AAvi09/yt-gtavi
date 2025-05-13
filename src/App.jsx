@@ -127,7 +127,26 @@ function App() {
               />
             </div>
           </div>
-          <div></div>
+          <div className="w-full h-screen flex px-10 bg-black items-center justify-center">
+            <div className="cntnr flex relative w-full h-[80%] text-white">
+              <div className="limg w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                <img src="./imag.png" alt="" />
+              </div>
+              <div className="rg ">
+                <h1 className="text-4xl">still runnning,</h1>
+                <h1 className="text-4xl">not hunting</h1>
+                <p className="font-[Helvetica_Now_Display] text-2xl mt-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maxime laudantium excepturi dolores qui inventore odit, porro,
+                  vero quam enim at reprehenderit tenetur dicta.
+                </p>
+                <p className="font-[Helvetica_Now_Display] text-2xl mt-10">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Quidem aliquam temporibus molestiae hic.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>
