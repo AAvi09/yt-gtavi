@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import "remixicon/fonts/remixicon.css";
 
 function App() {
   const [showContent, setShowContent] = useState(false);
@@ -29,6 +30,23 @@ function App() {
       },
     });
   });
+
+  useGSAP(() => {
+    const main = document.querySelector(".main");
+
+    main?.addEventListener("mousemove", (e) => {
+      const moveX = (e.clientX / window.innerWidth - 0.5) * 40;
+      gsap.to(".main .text", { x: `${moveX * 0.4}%` });
+
+      gsap.to(".sky", {
+        x: moveX,
+      });
+
+      gsap.to(".bg", {
+        x: moveX * 1.7,
+      });
+    });
+  }, [showContent]);
   return (
     <>
       <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-[#000]">
@@ -63,27 +81,53 @@ function App() {
       {showContent && (
         <div className="main w-full">
           <div className="landing w-full h-screen bg-black">
-            <div className="navbar absolute top-0 left-0 z-[10] w-full py-10 px-10 ">
-              <div className="logo">
-                <div className="lines"></div>
-                <h3 className="text-3xl text-white">Rockstar</h3>
+            <div className="navbar absolute top-0 left-0 z-[10] w-full py-10 px-10 bg-gradient-to-b from-black to-transparent">
+              <div className="logo flex gap-7">
+                <div className="lines flex flex-col gap-[5px]">
+                  <div className="line w-15 h-2 bg-white rounded-lg"></div>
+                  <div className="line w-8 h-2 bg-white rounded-lg"></div>
+                  <div className="line w-5 h-2 bg-white rounded-lg"></div>
+                </div>
+                <h3 className="text-4xl -mt-[9px] leading-none text-white">
+                  Rockstar
+                </h3>
               </div>
             </div>
+
             <div className="imagesdiv relative w-full h-screen overflow-hidden">
               <img
-                className="absolute top-0 left-0 w-full h-full object-cover "
+                className="absolute sky scale-[1.2] top-0 left-0 w-full h-full object-cover "
                 src="./sky.png"
               />
               <img
-                className="absolute top-0 left-0 w-full h-full object-cover "
+                className="absolute bg scale-[1.1] top-0 left-0 w-full h-full object-cover "
                 src="./bg.png"
               />
+              <div className="text text-white flex flex-col gap-3 top-20 left-1/2 -translate-x-1/2 absolute ">
+                <h1 className="text-9xl -ml-40">grand</h1>
+                <h1 className="text-9xl ml-20">theft</h1>
+                <h1 className="text-9xl -ml-30">auto</h1>
+              </div>
               <img
-                className="absolute -bottom-[60%] left-1/2 -translate-x-1/2 scale-[0.5] "
+                className="absolute character -bottom-[60%] left-1/2 -translate-x-1/2 scale-[0.5] "
                 src="./girlbg.png"
               />
             </div>
+            <div className="btmbar absolute text-white bottom-0 left-0 w-full py-10 px-10  bg-gradient-to-t from-black to-transparent">
+              <div className="flex gap-4 items-center">
+                <i className="text-4xl ri-arrow-down-long-fill"></i>
+                <h3 className=" text-2xl font-[Helvetica_Now_Display]">
+                  Scroll Down
+                </h3>
+              </div>
+              <img
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[65px]"
+                src="./ps5.png"
+                alt="ps5"
+              />
+            </div>
           </div>
+          <div></div>
         </div>
       )}
     </>
