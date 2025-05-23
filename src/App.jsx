@@ -104,9 +104,9 @@ function App() {
                 src="./bg.png"
               />
               <div className="text text-white flex flex-col gap-3 top-20 left-1/2 -translate-x-1/2 absolute ">
-                <h1 className="text-8xl -ml-40">grand</h1>
-                <h1 className="text-8xl ml-20">theft</h1>
-                <h1 className="text-8xl -ml-30">auto</h1>
+                <h1 className="text-9xl -ml-40">grand</h1>
+                <h1 className="text-9xl ml-20">theft</h1>
+                <h1 className="text-9xl -ml-30">auto</h1>
               </div>
               <img
                 className="absolute character -bottom-[60%] left-1/2 -translate-x-1/2 scale-[0.5] "
